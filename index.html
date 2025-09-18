@@ -218,6 +218,129 @@
 
 
 
+     <!-- feedback section -->
+    <section class="feedback-section">
+      <div class="feedback-header">
+          <h2>We Value Your Feedback</h2>
+          <p>Help us serve you better by sharing your dining experience</p>
+      </div>
+      
+      <form class="feedback-form" id="feedbackForm">
+          <div class="form-row">
+              <div class="form-group">
+                  <label for="name">Your Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              
+              <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required placeholder="john@example.com">
+              </div>
+          </div>
+          
+          <div class="form-row">
+              <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
+              </div>
+              
+              <div class="form-group">
+                  <label for="visitDate">Visit Date *</label>
+                  <input type="date" id="visitDate" name="visitDate" required>
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <label for="mealType">Meal Type *</label>
+              <select id="mealType" name="mealType" required>
+                  <option value="">Select meal type</option>
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="brunch">Brunch</option>
+                  <option value="takeaway">Takeaway</option>
+              </select>
+          </div>
+          
+          <div class="form-group">
+              <label for="foodOrdered">What did you order? *</label>
+              <input type="text" id="foodOrdered" name="foodOrdered" required 
+                     placeholder="e.g., Grilled Salmon, Caesar Salad, Chocolate Cake">
+          </div>
+          
+          <div class="form-group">
+              <label>Rate Your Experience *</label>
+              <div class="star-rating">
+                  <div class="stars" id="starRating">
+                      <span class="star" data-rating="1">★</span>
+                      <span class="star" data-rating="2">★</span>
+                      <span class="star" data-rating="3">★</span>
+                      <span class="star" data-rating="4">★</span>
+                      <span class="star" data-rating="5">★</span>
+                  </div>
+                  <span class="rating-text" id="ratingText">Click to rate</span>
+              </div>
+              <input type="hidden" id="rating" name="rating" value="0" required>
+          </div>
+          
+          <div class="form-group">
+              <label>What aspects did you enjoy?</label>
+              <div class="checkbox-group">
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="food" name="aspects" value="food">
+                      <label for="food">Food Quality</label>
+                  </div>
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="service" name="aspects" value="service">
+                      <label for="service">Service</label>
+                  </div>
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="ambiance" name="aspects" value="ambiance">
+                      <label for="ambiance">Ambiance</label>
+                  </div>
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="value" name="aspects" value="value">
+                      <label for="value">Value for Money</label>
+                  </div>
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="cleanliness" name="aspects" value="cleanliness">
+                      <label for="cleanliness">Cleanliness</label>
+                  </div>
+                  <div class="checkbox-item">
+                      <input type="checkbox" id="speed" name="aspects" value="speed">
+                      <label for="speed">Speed of Service</label>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <label for="message">Your Feedback Message *</label>
+              <textarea id="message" name="message" required 
+                        placeholder="Please share your dining experience with us. What did you love? What could we improve?"></textarea>
+          </div>
+          
+          <div class="form-group">
+              <label for="recommend">Would you recommend us to others? *</label>
+              <select id="recommend" name="recommend" required>
+                  <option value="">Please select</option>
+                  <option value="definitely">Definitely</option>
+                  <option value="probably">Probably</option>
+                  <option value="notSure">Not Sure</option>
+                  <option value="probablyNot">Probably Not</option>
+                  <option value="definitelyNot">Definitely Not</option>
+              </select>
+          </div>
+          
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+          
+          <div class="success-message" id="successMessage">
+              Thank you for your feedback! We appreciate your time and will use your input to improve our service.
+          </div>
+      </form>
+    </section>
+
+
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -369,17 +492,103 @@
           document.querySelector('.reviews-container').scrollBy({ left: 300, behavior: 'smooth' });
         };
 
-  // Footer reveal on scroll
-  window.addEventListener('scroll', function() {
-    const footer = document.querySelector('.footer-animated');
-    const windowHeight = window.innerHeight;
-    const footerTop = footer.getBoundingClientRect().top;
-    if (footerTop < windowHeight - 60) {
-      footer.classList.add('visible');
-    } else {
-      footer.classList.remove('visible');
-    }
-  });
+
+        // Feedback form star rating
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+        const ratingText = document.getElementById('ratingText');
+        let selectedRating = 0;
+
+        const ratingMessages = {
+            1: 'Poor experience',
+            2: 'Below average',
+            3: 'Average',
+            4: 'Good',
+            5: 'Excellent!'
+        };
+
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                selectedRating = index + 1;
+                ratingInput.value = selectedRating;
+                updateStars();
+                ratingText.textContent = ratingMessages[selectedRating];
+            });
+
+            star.addEventListener('mouseenter', () => {
+                highlightStars(index + 1);
+                ratingText.textContent = ratingMessages[index + 1];
+            });
+        });
+
+        document.getElementById('starRating').addEventListener('mouseleave', () => {
+            updateStars();
+            ratingText.textContent = selectedRating ? ratingMessages[selectedRating] : 'Click to rate';
+        });
+
+        function updateStars() {
+            stars.forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Set today's date as max for visit date
+        document.getElementById('visitDate').max = new Date().toISOString().split('T')[0];
+
+        // Form Submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate rating
+            if (selectedRating === 0) {
+                alert('Please rate your experience');
+                return;
+            }
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                selectedRating = 0;
+                ratingInput.value = 0;
+                updateStars();
+                ratingText.textContent = 'Click to rate';
+                document.getElementById('successMessage').classList.remove('show');
+            }, 3000);
+        });
+
+
+        // Footer reveal on scroll
+        window.addEventListener('scroll', function() {
+          const footer = document.querySelector('.footer-animated');
+          const windowHeight = window.innerHeight;
+          const footerTop = footer.getBoundingClientRect().top;
+          if (footerTop < windowHeight - 60) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
     </script>
 </body>
 </html>
