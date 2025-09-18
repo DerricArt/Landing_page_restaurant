@@ -42,7 +42,9 @@ body::-webkit-scrollbar {
   font-weight: 700;
   font-style: normal;
 }
-
+.uppercase {
+  text-transform: uppercase;
+}
 
 header {
   position: absolute;
