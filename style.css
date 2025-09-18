@@ -76,7 +76,7 @@ header .logo .logo_name {
   display: flex;
   align-items: center;
   gap: 18px;
-  width: 18%;
+  width: 10%;
   justify-content: flex-end;
 }
 
@@ -274,7 +274,7 @@ main {
     font-size: 2rem;
   }
   .header-actions{
-    width: 25%;
+    width: 15%;
   }
   header nav ul li a {
     font-size: 1.5rem;
