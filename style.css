@@ -309,6 +309,11 @@ main {
     top: 150px;
   }
 
+  /* section dots */
+  #dotss {
+    right: 130px;
+  }
+
 }
 
  #about {
