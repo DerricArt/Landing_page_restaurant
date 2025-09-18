@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Plate Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo_mangan_tamo.png" alt="logo" class="logo_img">
+      <span class="logo_name shrikhand-regular">Mangan Tamo</span>  
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#Products">Products</a></li>
+        <li><a href="#Reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="notif-btn" aria-label="Notifications">
+        <img src="img/notification.png" alt="Notifications" class="header-icon">
+      </button>
+      <button class="profile-btn" aria-label="Profile">
+        <img src="img/user.png" alt="Profile" class="header-icon">
+      </button>
+    </div>
+  </header>
+  <main>
+
+
+
+    <!-- Home Section -->
+    <section id="home">
+      <div class="home-text">
+        <p>"<span class="shrikhand-regular">Eat Well.</span><br><span class="dancing-script something_red">Share More</span><br><span class="shrikhand-regular">Mangan Tamo</span></p>
+      </div>
+      <p class="home-text-p">“Where every bite tells a story, every table welcomes a memory, <br>and every meal brings us home.”</p>
+
+      <img src="img/bg_img_2.png" alt="background_img" class="background-img">
+      <div class="scene">
+          <div class="plate plate1" onclick="selectPlate(1)">
+            <img src="./img/sphagetti.png" alt="" class="plate-img">
+          </div>
+          <div class="plate plate2" onclick="selectPlate(2)">
+            <img src="./img/pasta_with_something_else.png" alt="" class="plate-img">
+          </div>
+          <div class="plate plate3" onclick="selectPlate(3)">
+            <img src="./img/karbonara.png" alt="" class="plate-img">    
+          </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="about-bg-accent"></div>
+      <svg class="about-divider" viewBox="0 0 1440 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#fff" fill-opacity="1" d="M0,160 C360,80 1080,240 1440,120 L1440,0 L0,0 Z"></path>
+      </svg>
+      <div class="about-content">
+        <div class="about-img-circle">
+          <img src="img/sphagetti.png" alt="Filipino Dish">
+        </div>
+        <div class="about-text-box">
+          <h2 class="about_title shrikhand-regular">About Us</h2>
+          <p>
+            Established in 2025, <span class="shrikhand-regular" style="color:#ba0001;">Mangan Tamo</span> began as a part-time online business. "Mangan Tamo" is a Pangasinan term meaning "Let's Eat", reflecting our warm invitation to everyone to experience the joy of Filipino dining.
+          </p>
+          <p>
+            Our mission is simple: to serve home-cooked style dishes that remind you of family gatherings, childhood memories, and the comfort of authentic Filipino cuisine. Every recipe is crafted with love, using traditional techniques passed down through generations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+    <!-- Products Section -->
+    <section id="Products">
+      <div class="contact-bg-accent_prod"></div>
+      <h2 class="products_title shrikhand-regular">Our Products</h2>
+      <div class="products-controls">
+        <button class="products-arrow left" aria-label="Scroll left"><img src="img/right-arrow.png" alt="next_icon" class="product_icon_2"></button>
+        <button class="products-arrow right" aria-label="Scroll right"><img src="img/right-arrow.png" alt="next_icon" class="product_icon" ></button>
+      </div>
+      <div class="products-container">
+        <div class="product-card">
+          <img src="img/spaghetti_product.jpg" alt="Spaghetti" class="product-img">
+          <h3 class="product-name roboto">Spaghetti</h3>
+          <div class="product-rating">
+            <span class="star">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-value">4.0</span>
+          </div>
+          <p class="product-description roboto">Classic Filipino-style spaghetti with sweet tomato sauce, hot dogs, and cheese.</p>
+          <div class="product-card-footer">
+            <span class="product-price">&#8369;350</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="img/pancit_product_1.png" alt="Pancit" class="product-img">
+          <h3 class="product-name roboto">Pancit Palabok</h3>
+          <div class="product-rating">
+            <span class="star">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-value">4.0</span>
+          </div>
+          <p class="product-description roboto">Classic Filipino-style pancit with stir-fried noodles, vegetables, and meat.</p>
+          <div class="product-card-footer">
+            <span class="product-price">&#8369;350</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="img/halo_product_1.png" alt="Halo-Halo" class="product-img">
+          <h3 class="product-name roboto">Halo-Halo</h3>
+          <div class="product-rating">
+            <span class="star">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-value">4.0</span>
+          </div>
+          <p class="product-description roboto">Classic Filipino-style halo-halo with crushed ice, sweet beans, and leche flan.</p>
+          <div class="product-card-footer">
+            <span class="product-price">&#8369;60</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="img/carbonara_product_1.png" alt="Carbonara" class="product-img">
+          <h3 class="product-name roboto">Carbonara</h3>
+          <div class="product-rating">
+            <span class="star">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-value">4.0</span>
+          </div>
+          <p class="product-description roboto">Classic Filipino-style carbonara with creamy sauce, bacon, and cheese.</p>
+          <div class="product-card-footer">
+            <span class="product-price">&#8369;350</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="img/shanghai_product_1.png" alt="Shanghai" class="product-img">
+          <h3 class="product-name roboto">Shanghai</h3>
+          <div class="product-rating">
+            <span class="star">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <span class="rating-value">4.0</span>
+          </div>
+          <p class="product-description roboto">Classic Filipino-style shanghai with ground pork, vegetables, and spices.</p>
+          <div class="product-card-footer">
+            <span class="product-price">&#8369;300</span>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Add more product-card divs if you want ehe! -->
+      </div>
+    </section>
+
+
+
+    <!-- Reviews Section -->
+     <section id="Reviews">
+      
+      <h2 class="shrikhand-regular reviews-title  ">What Our Customer Says?</h2>
+      <div class="reviews-controls">
+        <button class="reviews-arrow left" aria-label="Scroll left"><img src="img/right-arrow.png" alt="next_icon" class="review_icon_2"></button>
+        <button class="reviews-arrow right" aria-label="Scroll right"><img src="img/right-arrow.png" alt="next_icon" class="review_icon" ></button>
+      </div>
+      <div class="reviews-container">
+        <div class="review-card">
+          <p class="review-text ">"Mangan Tamo's spaghetti is a delightful twist on a classic favorite. The sweet tomato sauce, combined with the savory hot dogs and creamy cheese, creates a perfect balance of flavors that keeps me coming back for more. It's like a taste of home in every bite!"</p>
+          <div class="reviewer-info">
+            <img src="img/Jane Dela Cruz.jpg" alt="Reviewer 1" class="reviewer-img">
+            <div>
+              <h4 class="reviewer-name roboto">Jane Dela Cruz</h4>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text ">"Crispy on the outside and savory on the inside! Every bite of the lumpiang Shanghai was bursting with flavor — definitely the star of the meal."</p>
+          <div class="reviewer-info">
+            <img src="img/Jack Buada.jpg" alt="Reviewer 1" class="reviewer-img">
+            <div>
+              <h4 class="reviewer-name roboto">Jack Buada</h4>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text ">"Creamy, cheesy, and rich — the carbonara was heavenly. The sauce clung to every strand of pasta, and the smoky bacon added the perfect salty touch."</p>
+          <div class="reviewer-info">
+            <img src="img/John Mark Zacarias.jpg" alt="Reviewer 1" class="reviewer-img">
+            <div>
+              <h4 class="reviewer-name roboto">John Mark Zacarias</h4>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text ">"The halo-halo was so refreshing and colorful. Each spoonful was a surprise — sweet beans, creamy leche flan, soft ube, and that satisfying crunch of ice. Perfect on a hot day!"</p>
+          <div class="reviewer-info">
+            <img src="img/Maria delo Santos.jpg" alt="Reviewer 1" class="reviewer-img">
+            <div>
+              <h4 class="reviewer-name roboto">Maria Dela Santos</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <!-- <div class="contact-bg-accent"></div> -->
+      <h2 class="contact_title shrikhand-regular">Contact Us</h2>
+      <div class="contact-container">
+        <form class="contact-form">
+          <label for="name" class="contact-label roboto">Name</label>
+          <input type="text" id="name" name="name" class="contact-input" required>
+        
+          <label for="email" class="contact-label roboto">Email</label>
+          <input type="email" id="email" name="email" class="contact-input" required>
+        
+          <label for="message" class="contact-label roboto">Message</label>
+          <textarea id="message" name="message" class="contact-textarea" rows="4" required></textarea>
+        
+          <button type="submit" class="contact-submit-btn">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <h3 class="contact-info-title shrikhand-regular">Get in Touch</h3>
+          <p class="contact-info-text roboto">We'd love to hear from you! Whether you have questions about our menu, catering services, or just want to say hello, feel free to reach out.</p>
+          <p class="contact-info-text roboto"><strong>Email:</strong> mangantamo@gmail.com</p>
+          <p class="contact-info-text roboto"><strong>Phone:</strong> +63 969 160 7938</p>
+          <p class="contact-info-text roboto"><strong>Location:</strong> nearly Maurious, brgy. Lucero, Bolinao Pangasinan</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer-animated">
+      <p class="footer-text roboto">© 2024 Mangan Tamo. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><img src="img/facebook.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" aria-label="Twitter"><img src="img/twitter.png" alt="Twitter" class="social-icon"></a>
+        <a href="#" aria-label="Instagram"><img src="img/instagram.png" alt="Instagram" class="social-icon"></a>
+      </div>
+    </footer>
+  </main>
+  
+    <script>
+        let currentPlate = 1;
+        let autoRotateInterval;
+
+        function updatePlatePositions() {
+            const plates = document.querySelectorAll('.plate');
+            
+            plates.forEach((plate, index) => {
+                plate.classList.remove('plate1', 'plate2', 'plate3');
+                
+                const plateNum = index + 1;
+                let newClass;
+                
+                if (plateNum === currentPlate) {
+                    newClass = 'plate1'; // Front
+                } else if (plateNum === (currentPlate % 3) + 1) {
+                    newClass = 'plate2'; // Top-left
+                } else {
+                    newClass = 'plate3'; // Bottom-left
+                }
+                
+                plate.classList.add(newClass);
+            });
+        }
+
+        function rotateCarousel(direction) {
+            if (direction === 'next') {
+                currentPlate = (currentPlate % 3) + 1;
+            } else {
+                currentPlate = currentPlate === 1 ? 3 : currentPlate - 1;
+            }
+            updatePlatePositions();
+        }
+
+        function selectPlate(plateNum) {
+            currentPlate = plateNum;
+            updatePlatePositions();
+        }
+
+        function autoRotate() {
+            if (!autoRotateInterval) {
+          autoRotateInterval = setInterval(() => {
+              rotateCarousel('next');
+          }, 3000);
+            }
+        }
+
+        // Start auto-rotation on load
+        window.addEventListener('DOMContentLoaded', autoRotate);
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                rotateCarousel('prev');
+            } else if (e.key === 'ArrowRight') {
+                rotateCarousel('next');
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                autoRotate();
+            }
+        });
+
+        // Add some randomization to the background
+        function createFloatingElements() {
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.style.position = 'absolute';
+                element.style.width = Math.random() * 4 + 2 + 'px';
+                element.style.height = element.style.width;
+                element.style.background = `rgba(255, 255, 255, ${Math.random() * 0.3})`;
+                element.style.borderRadius = '50%';
+                element.style.left = Math.random() * window.innerWidth + 'px';
+                element.style.top = Math.random() * window.innerHeight + 'px';
+                element.style.animation = `float ${Math.random() * 10 + 10}s infinite linear`;
+                element.style.zIndex = '1';
+                document.body.appendChild(element);
+            }
+        }
+
+        // Add floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        createFloatingElements();
+
+        // Product horizontal scroll
+        document.querySelector('.products-arrow.left').onclick = function() {
+          document.querySelector('.products-container').scrollBy({ left: -300, behavior: 'smooth' });
+        };
+        document.querySelector('.products-arrow.right').onclick = function() {
+          document.querySelector('.products-container').scrollBy({ left: 300, behavior: 'smooth' });
+        };
+      
+        // Reviews horizontal scroll
+        document.querySelector('.reviews-arrow.left').onclick = function() {
+          document.querySelector('.reviews-container').scrollBy({ left: -300, behavior: 'smooth' });
+        };
+        document.querySelector('.reviews-arrow.right').onclick = function() {
+          document.querySelector('.reviews-container').scrollBy({ left: 300, behavior: 'smooth' });
+        };
+
+  // Footer reveal on scroll
+  window.addEventListener('scroll', function() {
+    const footer = document.querySelector('.footer-animated');
+    const windowHeight = window.innerHeight;
+    const footerTop = footer.getBoundingClientRect().top;
+    if (footerTop < windowHeight - 60) {
+      footer.classList.add('visible');
+    } else {
+      footer.classList.remove('visible');
+    }
+  });
+    </script>
+</body>
+</html>
